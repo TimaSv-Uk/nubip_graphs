@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 from numpy import inf
 
-# Create a graph with nodes and edges
 G = nx.MultiGraph()
 f = open("input.txt", "r")
 for line in f:
@@ -120,7 +119,6 @@ print(
 min_distance = max_distance
 for start_node, connections in results.items():
     for end_node, distance in connections.items():
-        # NOTE: not including node to itself
         if distance < min_distance and start_node != end_node:
             min_distance = distance
             vertices = (start_node, end_node)
