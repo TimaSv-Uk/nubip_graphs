@@ -21,8 +21,7 @@ graph_coloring = nx.coloring.greedy_color(G)
 unique_colors = set(graph_coloring.values())
 
 max_degree = max(G.degree, key=lambda x: x[1])[1]
-
-edge_chromatic_number = max_degree if nx.is_eulerian(G) else max_degree + 1
+edge_chromatic_number = max_degree + 1
 print(f"\nХроматичне число: {len(unique_colors)}")
 print(f"Реберне хроматичне число: {edge_chromatic_number}")
 
