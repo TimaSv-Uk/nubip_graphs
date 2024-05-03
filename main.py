@@ -25,30 +25,33 @@ print(f"\nХроматичне число: {len(unique_colors)}")
 print(f"Реберне хроматичне число: {edge_chromatic_number}")
 
 # 4. Написати програму для знаходження всіх ейлерових ланцюгів та циклів
+# NOTE: Якщо граф має ізольовану вершину програма не спрацює бо незможе зробити граф ейлеровим,
+# щоб вона спрацювала закоментуйте або видаліть 4 пункт
+
 if nx.is_eulerian(G):
     eulerian_circuit_edges = list(nx.eulerian_circuit(G))
     print("Ребра ейлерового циклу:", eulerian_circuit_edges)
 else:
     print("\nГраф не є ейлеровим")
-    H = nx.eulerize(G)
-
-    eulerian_circuit_edges = list(nx.eulerian_circuit(H))
-    print("Ребра ейлерового циклу:", eulerian_circuit_edges)
+    # H = nx.eulerize(G)
+    #
+    # eulerian_circuit_edges = list(nx.eulerian_circuit(H))
+    # print("Ребра ейлерового циклу:", eulerian_circuit_edges)
 if nx.has_eulerian_path(G):
     eulerian_path_edges = list(nx.eulerian_path(G))
     print("Ребра ейлерового шляху:", eulerian_path_edges, "\n")
 else:
     print("Граф не має ейлерового шляху.")
-    H = nx.eulerize(G)
-
-    print("Оригінальний граф:")
-    print(nx.edges(G))
-
-    print("\nНовий ейлерів граф:")
-    print(nx.edges(H))
-
-    eulerian_path_edges = list(nx.eulerian_path(H))
-    print("Ребра ейлерового шляху:", eulerian_path_edges, "\n")
+    # H = nx.eulerize(G)
+    #
+    # print("Оригінальний граф:")
+    # print(nx.edges(G))
+    #
+    # print("\nНовий ейлерів граф:")
+    # print(nx.edges(H))
+    #
+    # eulerian_path_edges = list(nx.eulerian_path(H))
+    # print("Ребра ейлерового шляху:", eulerian_path_edges, "\n")
 
 
 # 5. Написати програму для знаходження всіх гамільтонових ланцюгів та циклів
