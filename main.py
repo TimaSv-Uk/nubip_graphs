@@ -35,7 +35,7 @@ else:
     eulerian_circuit_edges = list(nx.eulerian_circuit(H))
     print("Ребра ейлерового циклу:", eulerian_circuit_edges)
 if nx.has_eulerian_path(G):
-    eulerian_path_edges = list(nx.eulerian_path(H))
+    eulerian_path_edges = list(nx.eulerian_path(G))
     print("Ребра ейлерового шляху:", eulerian_path_edges, "\n")
 else:
     print("Граф не має ейлерового шляху.")
